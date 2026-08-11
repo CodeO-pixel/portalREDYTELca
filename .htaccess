@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# If the file or directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Otherwise route all requests to router.php
+RewriteRule ^.*$ /router.php [L,QSA]
