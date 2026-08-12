@@ -495,7 +495,7 @@ function renderProfileMenu() {
 function applyEmpresaConfig(config = {}) {
     const name = config.nombre_empresa || 'REDYTELCA';
     const color = config.color_primario || '#2563eb';
-    const logoPath = config.logo_path || 'Logos/logo_transparent.png';
+    const logoPath = config.logo_path || '/Logos/logo_transparent.png';
 
     // Convertir HEX a RGB y aplicar variables CSS para usar opacidades
     const hex = String(color || '#2563eb').replace('#', '').trim();

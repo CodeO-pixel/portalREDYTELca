@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REDYTELCA Admin</title>
+    <base href="/">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
     <div id="login-overlay">
         <div class="card login-box">
-            <div class="login-brand"><img id="login-brand-logo" src="Logos/logo_transparent.png" alt="REDYTELCA" class="login-brand-logo"></div>
+            <div class="login-brand"><img id="login-brand-logo" src="/Logos/logo_transparent.png" alt="REDYTELCA" class="login-brand-logo"></div>
             <h3>Iniciar sesión</h3>
             <input id="user" type="text" placeholder="Usuario" autocomplete="username">
             <input id="pass" type="password" placeholder="Contraseña" autocomplete="current-password">
@@ -22,7 +23,7 @@
     <div class="sidebar">
         <div class="brand">
             <div class="brand-logo-wrap">
-                <img id="sidebar-brand-logo" src="" alt="REDYTELCA" class="brand-logo">
+                <img id="sidebar-brand-logo" src="/Logos/redytelca-identiadad-tipo-c-blanco.svg" alt="REDYTELCA" class="brand-logo">
             </div>
             <span>REDYTELCA</span>
         </div>
@@ -1107,7 +1108,7 @@
                     <!-- Columna Derecha: Vista Previa -->
                     <div class="preview-card" style="background:#f8fafc; border:1px solid var(--border); border-radius:14px; padding:24px; text-align:center; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
                         <h4 style="margin:0 0 20px 0; color:var(--muted); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Vista Previa</h4>
-                        <img id="empresa-logo-preview" src="Logos/logo_transparent.png" alt="Vista previa del logo" class="payment-logo" style="margin: 0 auto 20px; max-height: 80px;">
+                        <img id="empresa-logo-preview" src="/Logos/logo_transparent.png" alt="Vista previa del logo" class="payment-logo" style="margin: 0 auto 20px; max-height: 80px;">
                         <button type="button" style="width:100%; cursor:default; pointer-events:none;">Botón de Muestra</button>
                         <p style="margin-top:16px; font-size:0.85rem; color:var(--muted); line-height:1.4;">El color seleccionado se aplicará a todos los botones, enlaces y elementos interactivos de la plataforma.</p>
                     </div>
@@ -1313,7 +1314,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
     <script>
         (function() {
             const assets = [

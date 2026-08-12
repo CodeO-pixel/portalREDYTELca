@@ -9,7 +9,7 @@ header('Content-Type: text/html; charset=utf-8');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Portal de Pago - REDYTELCA</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <style>
         body { background: linear-gradient(135deg, #eef4ff 0%, #f8fafc 100%); }
         .payment-portal { max-width: 980px; margin: 36px auto; padding: 20px; }
@@ -65,7 +65,7 @@ header('Content-Type: text/html; charset=utf-8');
         });
 
         (function() {
-            const asset = 'Logos/logo_transparent.png';
+            const asset = '/Logos/logo_transparent.png';
             const candidates = ['', '../', '../../', '../../../'];
             let index = 0;
             const portalImg = document.getElementById('portal-logo-img');
