@@ -34,7 +34,7 @@ header('Content-Type: text/html; charset=utf-8');
 
             <div class="payment-grid">
                 <div>
-                    <form id="payment-form" action="/api/pagar.php" method="POST">
+                    <form id="payment-form" method="POST">
                         <label>Documento / Cédula</label>
                         <input name="cedula" placeholder="Ej. V-12345678">
 
@@ -56,11 +56,27 @@ header('Content-Type: text/html; charset=utf-8');
         </div>
     </main>
     <script>
-        document.getElementById('payment-form')?.addEventListener('submit', function (event) {
+        document.getElementById('payment-form')?.addEventListener('submit', async function (event) {
             event.preventDefault();
             const feedback = document.getElementById('payment-feedback');
-            if (feedback) {
-                feedback.textContent = 'Solicitud recibida. El equipo de REDYTELCA confirmará la transacción en breve.';
+            const form = event.target;
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/api_pagar.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (feedback) {
+                    feedback.textContent = result.message || 'Solicitud recibida. El equipo de REDYTELCA confirmará la transacción en breve.';
+                    feedback.style.color = result.status === 'success' ? '#16a34a' : '#dc2626';
+                }
+            } catch (error) {
+                if (feedback) {
+                    feedback.textContent = 'Error enviando pago. Intenta nuevamente.';
+                    feedback.style.color = '#dc2626';
+                }
             }
         });
 
